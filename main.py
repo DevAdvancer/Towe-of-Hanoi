@@ -9,9 +9,14 @@ def toh(n, src, hlp, des):
 
 def main():
 	n = int(input("Enter the number of disk: "))
-	src, hlp, des = 1, 2, 3
-	toh(n, src, hlp, des)
-	print("Total Steps Required for this Tower of Hanoi is: ", pow(2, n) - 1)
+	try:
+		src, hlp, des = 1, 2, 3
+		toh(n, src, hlp, des)
+		print("Total Steps Required for ", n, " disks this Tower of Hanoi is: ", pow(2, n) - 1)
+	except ValueError:
+		print("Exception While trying to enter above 500 disk ! ")
+	else:
+		print("Something went wrong ! ")
 
 
 if __name__ == "__main__":
